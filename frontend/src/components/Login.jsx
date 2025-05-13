@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { auth, googleProvider, loginUser, registerUser } from "../firebase";
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, onAuthStateChanged, signOut } from "firebase/auth";
 import toast from "react-hot-toast";
+
+const DEFAULT_AVATAR = "/default-avatar.jpg"; 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
   const handleEmailLogin = async () => {
     try {
@@ -32,6 +42,30 @@ export default function Login() {
       toast.error(err.message);
     }
   };
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    toast.success("Logged out");
+  };
+
+  if (user) {
+    return (
+      <div className="flex flex-col items-center gap-4 max-w-sm mx-auto text-center">
+        <img
+          src={user.photoURL || DEFAULT_AVATAR}
+          alt="avatar"
+          className="w-32 h-32 rounded-full border"
+        />
+        <div>
+          <p className="font-bold">{user.displayName || user.email}</p>
+          <p className="text-sm text-gray-500">{user.email}</p>
+        </div>
+        <button onClick={handleLogout} className="bg-gray-400 text-white px-4 py-2 rounded">
+          Logout
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col gap-4 max-w-sm mx-auto text-center">

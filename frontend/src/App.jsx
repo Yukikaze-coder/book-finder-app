@@ -73,9 +73,9 @@ function App() {
           {user ? (
             <div className="flex items-center gap-4">
               <img
-                src={user.photoURL}
+                src={user.photoURL || "/default-avatar.jpg"}
                 alt="avatar"
-                className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700"
+                className="w-20 h-20 rounded-full border border-gray-300 dark:border-gray-700"
               />
               <span>{user.displayName}</span>
               <button
