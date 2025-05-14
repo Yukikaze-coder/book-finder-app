@@ -16,6 +16,10 @@ app.use(cors({
   credentials: true
 }));
 
+app.options("*", cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 
 //app.use(cors({
 //  origin: ["http://localhost:5173", "https://book-finder-app-1.onrender.com"],
@@ -27,7 +31,7 @@ app.use(express.json());
 // ✅ API routes
 app.use("/favorites", favoritesRoutes);
 
-// ✅ Default root route (helpful for health checks)
+// ✅ Default root route 
 app.get("/", (req, res) => {
   res.send("📚 Book Finder API is running!");
 });
