@@ -3,23 +3,22 @@ const express = require("express");
 const cors = require("cors");
 const favoritesRoutes = require("./routes/favorites");
 
-const app = express();
-
-// CORS configuration (allow local + deployed frontend)
 const allowedOrigins = [
-  "http://localhost:5173",
-  "https://book-finder-app-1.onrender.com"
+  "http://localhost:5173",                   // dev frontend
+  "https://your-frontend.onrender.com"       // deployed frontend
 ];
 
-app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
-}));
+
+const app = express();
+
+
+app.use(cors());
+app.use(express.json());
 
 app.use(express.json());
 
 // ✅ API routes
-app.use("/api/favorites", favoritesRoutes);
+app.use("/favorites", favoritesRoutes);
 
 // ✅ Default root route (helpful for health checks)
 app.get("/", (req, res) => {
@@ -36,3 +35,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on http://localhost:${PORT}`);
 });
+
