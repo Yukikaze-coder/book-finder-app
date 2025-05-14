@@ -2,14 +2,17 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-exports.up = function(knex) {
-  return knex.schema.createTable('books', function(table) {
-    table.increments('id').primary();
-    table.string('title').notNullable();
-    table.string('author').notNullable();
-    table.string('isbn').unique();
-    table.integer('year');
-    table.timestamps(true, true);
+exports.up = function (knex) {
+  return knex.schema.createTable("favorites", (table) => {
+    table.increments("id").primary();
+    table.string("user_id").notNullable();
+    table.string("book_id").notNullable();
+    table.string("title");
+    table.string("authors");
+    table.string("thumbnail");
+    table.timestamp("created_at").defaultTo(knex.fn.now());
+
+    table.unique(["user_id", "book_id"]);
   });
 };
 
