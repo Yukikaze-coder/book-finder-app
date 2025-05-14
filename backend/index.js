@@ -7,7 +7,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",                         
-  "https://your-frontend-app-1.onrender.com",       
+  "https://book-finder-app-1.onrender.com",       
 ];
 
 
