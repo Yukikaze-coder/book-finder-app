@@ -10,9 +10,9 @@ export default function Contact() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
         <p className="text-2xl leading-relaxed text-blue-600">
-          Have feedback or ideas? Reach out via social media or email us at{" "}
+          Have feedback or ideas? Reach out via social media or email us at{" "}. ご意見やご提案がございましたら、ソーシャルメディアまたはメールでお問い合わせください。
           <a href="mailto:hello@bookfinder.com" className="text-blue-500 underline">
-            hello@bookfinder.com
+            contact@bookfinder.com
           </a>.
         </p>
       </div>

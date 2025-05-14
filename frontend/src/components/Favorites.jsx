@@ -3,6 +3,7 @@ import axios from "axios";
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
 export default function Favorites({ user, refresh }) {
   const [favorites, setFavorites] = useState([]);
@@ -11,7 +12,7 @@ export default function Favorites({ user, refresh }) {
 
   const fetchFavorites = useCallback(async () => {
     try {
-      const res = await axios.get(`http://localhost:3000/favorites/${user.uid}`);
+      const res = await axios.get(`${API_BASE}/favorites/${user.uid}`);
       setFavorites(res.data);
     } catch (error) {
       console.error("Error fetching favorites:", error);
@@ -25,7 +26,7 @@ export default function Favorites({ user, refresh }) {
 
     setTimeout(async () => {
       try {
-        await axios.delete(`http://localhost:3000/favorites/${id}`);
+        await axios.delete(`${API_BASE}/favorites/${id}`);
         setFavorites((prev) => prev.filter((book) => book.id !== id));
         toast.success("✅ Removed from favorites.");
       } catch (error) {

@@ -11,6 +11,7 @@ export default function About() {
         <h1 className="text-3xl font-bold mb-4">About Book Finder</h1>
         <p className="text-5xl leading-relaxed text-blue-600">
           Book Finder is a full-stack web app that helps you search, save, and explore books using the Google Books API. It's designed for book lovers who want a modern, beautiful experience.
+          Book Finderは、Google Books APIを使って書籍を検索、保存、閲覧できるフルスタックのウェブアプリです。モダンで美しい体験を求める読書愛好家のために設計されています。 
         </p>
       </div>
 

@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import axios from 'axios';
-//import { auth } from "../firebase";
+import axios from "axios";
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
+
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
 export default function Search({ user, onSave, query, setQuery, books, setBooks }) {
   const [loading, setLoading] = useState(false);
@@ -17,7 +18,7 @@ export default function Search({ user, onSave, query, setQuery, books, setBooks 
     }
 
     try {
-      await axios.post("http://localhost:3000/favorites", {
+      await axios.post(`${API_BASE}/favorites`, {
         user_id: user.uid,
         book_id: book.id,
         title: book.title,

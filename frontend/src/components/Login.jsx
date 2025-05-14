@@ -52,7 +52,11 @@ export default function Login() {
     return (
       <div className="flex flex-col items-center gap-4 max-w-sm mx-auto text-center">
         <img
-          src={user.photoURL || DEFAULT_AVATAR}
+          src={
+            user.providerData[0]?.providerId === "password"
+              ? DEFAULT_AVATAR
+              : user.photoURL
+          }
           alt="avatar"
           className="w-32 h-32 rounded-full border"
         />

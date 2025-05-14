@@ -4,6 +4,8 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import { auth } from '../firebase';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
+
 export default function BookDetail() {
   const { id } = useParams();
   const [book, setBook] = useState(null);
@@ -47,7 +49,7 @@ export default function BookDetail() {
     }
 
     try {
-      await axios.post("http://localhost:3000/favorites", {
+      await axios.post(`${API_BASE}/favorites`, {
         user_id: user.uid,
         book_id: book.id,
         title: book.volumeInfo.title,

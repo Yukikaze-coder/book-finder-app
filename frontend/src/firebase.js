@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, createUserWithEmailAndPassword,
-  signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth";
+  signInWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 
 
 const firebaseConfig = {

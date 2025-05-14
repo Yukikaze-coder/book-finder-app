@@ -27,29 +27,30 @@ export default function Footer() {
         </div>
 
         {/* Links */}
-        <div className="flex gap-6 text-sm font-medium">
-          <Link to="/about" className="hover:text-blue-400 transition">About</Link>
-          <Link to="/contact" className="hover:text-blue-400 transition">Contact Us</Link>
+        <div className="flex justify-center gap-12 text-base font-medium mt-6">
+        <Link to="/about" className="hover:text-blue-400 transition">About</Link>
+        <Link to="/contact" className="hover:text-blue-400 transition">Contact Us</Link>
         </div>
 
         {/* Social Icons */}
-        <div className="flex gap-4 text-2xl">
-          <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook">
-            <FaFacebookF className="hover:text-blue-400 transition" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer" title="Instagram">
-            <FaInstagram className="hover:text-pink-400 transition" />
-          </a>
-          <a href="https://tiktok.com" target="_blank" rel="noreferrer" title="TikTok">
-            <FaTiktok className="hover:text-white transition" />
-          </a>
-          <a href="https://x.com" target="_blank" rel="noreferrer" title="X">
-            <FaXTwitter className="hover:text-gray-300 transition" />
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noreferrer" title="YouTube">
-            <FaYoutube className="hover:text-red-400 transition" />
-          </a>
-        </div>
+        <div className="flex justify-center flex-wrap gap-20 text-3xl mt-4">
+        <a href="https://facebook.com" target="_blank" rel="noreferrer" title="Facebook">
+        <FaFacebookF className="hover:text-blue-400 transition" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noreferrer" title="Instagram">
+        <FaInstagram className="hover:text-pink-400 transition" />
+        </a>
+        <a href="https://tiktok.com" target="_blank" rel="noreferrer" title="TikTok">
+        <FaTiktok className="hover:text-white transition" />
+        </a>
+        <a href="https://x.com" target="_blank" rel="noreferrer" title="X">
+        <FaXTwitter className="hover:text-gray-300 transition" />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noreferrer" title="YouTube">
+        <FaYoutube className="hover:text-red-400 transition" />
+        </a>
+       </div>
+
       </div>
     </footer>
   );

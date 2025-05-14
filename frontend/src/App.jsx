@@ -2,7 +2,7 @@ import Search from './components/Search';
 import Favorites from './components/Favorites';
 import Login from './components/Login';
 import BookDetail from './components/BookDetail.jsx';
-import Footer from './components/Footer'; // Added Footer import
+import Footer from './components/Footer'; 
 import { auth } from './firebase';
 import { useEffect, useState } from 'react';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
@@ -75,7 +75,7 @@ function App() {
               <img
                 src={user.photoURL || "/default-avatar.jpg"}
                 alt="avatar"
-                className="w-20 h-20 rounded-full border border-gray-300 dark:border-gray-700"
+                className="w-10 h-10 rounded-full border border-gray-300 dark:border-gray-700"
               />
               <span>{user.displayName}</span>
               <button
