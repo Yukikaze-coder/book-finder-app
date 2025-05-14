@@ -43,7 +43,7 @@ export default function BookDetail() {
   const saveFavorite = async () => {
     const user = auth.currentUser;
 
-    if (!user) {
+    if (!user || !user.uid) {
       toast.error("❌ Please log in to save favorites.");
       return;
     }
