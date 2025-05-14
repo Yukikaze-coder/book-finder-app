@@ -4,15 +4,15 @@ const cors = require("cors");
 const favoritesRoutes = require("./routes/favorites");
 
 const allowedOrigins = [
-  "http://localhost:5173",                   // dev frontend
-  "https://your-frontend-app-1.onrender.com"       // deployed frontend
+  "http://localhost:5173",                          // dev frontend
+  "https://your-frontend-app-1.onrender.com"        // deployed frontend
 ];
 
 
 const app = express();
 
 
-app.use(cors());
+
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
