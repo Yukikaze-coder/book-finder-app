@@ -1,6 +1,6 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
 const favoritesRoutes = require("./routes/favorites");
 
 const app = express();
@@ -13,6 +13,11 @@ const allowedOrigins = [
 
 
 app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
+
+app.options("*", cors({
   origin: allowedOrigins,
   credentials: true
 }));
