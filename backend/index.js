@@ -8,7 +8,6 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",                          // dev frontend
   "https://your-frontend-app-1.onrender.com",       // old deployed frontend
-  "https://book-finder-app-1.onrender.com"          // actual deployed frontend
 ];
 
 
