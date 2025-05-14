@@ -5,7 +5,7 @@ const favoritesRoutes = require("./routes/favorites");
 
 const allowedOrigins = [
   "http://localhost:5173",                   // dev frontend
-  "https://your-frontend.onrender.com"       // deployed frontend
+  "https://your-frontend-app-1.onrender.com"       // deployed frontend
 ];
 
 
@@ -23,7 +23,6 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(express.json());
 
 app.use(express.json());
 
