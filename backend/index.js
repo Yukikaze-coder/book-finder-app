@@ -3,15 +3,13 @@ const express = require("express");
 const cors = require("cors");
 const favoritesRoutes = require("./routes/favorites");
 
+
 const allowedOrigins = [
   "http://localhost:5173",                          // dev frontend
-  "https://your-frontend-app-1.onrender.com"        // deployed frontend
+  "https://your-frontend-app-1.onrender.com",       // old deployed frontend
+  "https://book-finder-app-1.onrender.com"          // actual deployed frontend
 ];
-
-
 const app = express();
-
-
 
 app.use(cors({
   origin: allowedOrigins,
@@ -22,7 +20,6 @@ app.use(cors({
 //  origin: ["http://localhost:5173", "https://book-finder-app-1.onrender.com"],
 //  credentials: true
 //}));
-
 
 app.use(express.json());
 
