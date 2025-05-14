@@ -29,7 +29,7 @@ app.use(cors({
 app.use(express.json());
 
 // ✅ API routes
-app.use("/favorites", favoritesRoutes);
+app.use("/api/favorites", favoritesRoutes);
 
 // ✅ Default root route 
 app.get("/", (req, res) => {
