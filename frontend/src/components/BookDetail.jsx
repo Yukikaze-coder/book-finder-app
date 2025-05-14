@@ -39,7 +39,7 @@ export default function BookDetail() {
     fetchBook();
   }, [id]);
 
-  // Updated saveFavorite function using backend and authentication
+  
   const saveFavorite = async () => {
     const user = auth.currentUser;
 
