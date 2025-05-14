@@ -6,8 +6,8 @@ const favoritesRoutes = require("./routes/favorites");
 const app = express();
 
 const allowedOrigins = [
-  "http://localhost:5173",                          // dev frontend
-  "https://your-frontend-app-1.onrender.com",       // old deployed frontend
+  "http://localhost:5173",                         
+  "https://your-frontend-app-1.onrender.com",       
 ];
 
 
