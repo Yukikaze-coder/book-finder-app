@@ -12,16 +12,16 @@ const allowedOrigins = [
 const app = express();
 
 
-//app.use(cors());
-//app.use(cors({
-//  origin: allowedOrigins,
-//  credentials: true
-//}));
-
+app.use(cors());
 app.use(cors({
-  origin: ["http://localhost:5173", "https://book-finder-app-1.onrender.com"],
+  origin: allowedOrigins,
   credentials: true
 }));
+
+//app.use(cors({
+//  origin: ["http://localhost:5173", "https://book-finder-app-1.onrender.com"],
+//  credentials: true
+//}));
 
 
 app.use(express.json());
