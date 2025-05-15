@@ -45,9 +45,6 @@ export default function Favorites({ user, refresh }) {
   }
   }, [user?.uid, refresh, fetchFavorites]);
 
-  //useEffect(() => {
-  //  fetchFavorites();
-  //}, [refresh, fetchFavorites]);
 
   if (loading) return <p className="text-center text-gray-500 dark:text-gray-400">Loading favorites...</p>;
   if (favorites.length === 0) return <p className="text-center text-gray-400 dark:text-gray-500">No favorites yet.</p>;
