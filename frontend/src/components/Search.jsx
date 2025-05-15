@@ -61,39 +61,39 @@ export default function Search({ user, onSave, query, setQuery, books, setBooks 
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded">
-      {/* Animated Input + Button Area */}
-      <div
-        className="flex gap-2 mb-6 animate-fade-in"
-        style={{ animationDelay: "100ms" }}
-      >
-        <input
-          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded shadow focus:outline-none focus:ring focus:ring-blue-300 dark:focus:ring-blue-800 transition bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100"
-          type="text"
-          placeholder="Search books..."
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
+  <div className="p-6 max-w-xl mx-auto bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 rounded">
+    {/* Animated Input + Button Area */}
+    <div
+      className="flex justify-center gap-2 mb-6 animate-fade-in"
+      style={{ animationDelay: "100ms" }}
+    >
+      <input
+        className="w-2/3 max-w-md px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-full shadow focus:outline-none focus:ring focus:ring-blue-300 dark:focus:ring-blue-800 transition bg-white dark:bg-gray-800 text-gray-800 dark:text-white-100"
+        type="text"
+        placeholder="Search books..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
             searchBooks();
-           }
-          }}
-        />
+          }
+        }}
+      />
+      <button
+        className="bg-blue-500 dark:bg-blue-700 text-white px-4 py-2 rounded-full shadow hover:bg-blue-600 dark:hover:bg-blue-800 transition"
+        onClick={searchBooks}
+      >
+        Search
+      </button>
+      {books.length > 0 && (
         <button
-          className="bg-blue-500 dark:bg-blue-700 text-white px-4 py-2 rounded shadow hover:bg-blue-600 dark:hover:bg-blue-800 transition"
-          onClick={searchBooks}
+          onClick={clearSearch}
+          className="bg-gray-300 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-400 transition"
         >
-          Search
+          Clear
         </button>
-        {books.length > 0 && (
-          <button
-            onClick={clearSearch}
-            className="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400 transition"
-          >
-            Clear
-          </button>
-        )}
-      </div>
+      )}
+    </div>
       {/* Loading and Empty States */}
       {loading && <p className="text-center text-gray-500 dark:text-gray-400">Loading books...</p>}
       {!loading && books.length === 0 && (
