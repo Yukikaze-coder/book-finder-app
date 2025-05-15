@@ -78,7 +78,7 @@ export default function BookDetail() {
   return (
     <div className="max-w-5xl mx-auto p-6">
       <Link to="/" className="text-blue-500 hover:underline mb-6 block">
-        ← Back to Home
+        ← 🏡 Home
       </Link>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="flex justify-center">

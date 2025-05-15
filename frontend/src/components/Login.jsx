@@ -58,7 +58,7 @@ export default function Login() {
               : user.photoURL
           }
           alt="avatar"
-          className="w-32 h-32 rounded-full border"
+          className="w-16 h-16 rounded-full border"
         />
         <div>
           <p className="font-bold">{user.displayName || user.email}</p>

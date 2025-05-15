@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div className="max-w-3xl mx-auto px-6 py-12 text-gray-800 dark:text-gray-200 rounded-lg overflow-hidden">
       <Link to="/" className="text-blue-500 hover:underline block mb-6 text-center">
-        ← Back to Home
+        ← 🏡 Home
       </Link>
 
       <div className="mb-8 text-center">
