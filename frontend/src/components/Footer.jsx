@@ -4,6 +4,9 @@ import {
   FaTiktok,
   FaXTwitter,
   FaYoutube,
+  FaLinkedin,
+  FaGithub,
+  FaDiscord,
 } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -48,6 +51,15 @@ export default function Footer() {
         </a>
         <a href="https://youtube.com" target="_blank" rel="noreferrer" title="YouTube">
         <FaYoutube className="hover:text-red-400 transition" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" title="LinkedIn">
+        <FaLinkedin className="hover:text-blue-300 transition" />
+        </a>
+        <a href="https://github.com" target="_blank" rel="noreferrer" title="GitHub">
+        <FaGithub className="hover:text-gray-400 transition" />
+        </a>
+        <a href="https://discord.com" target="_blank" rel="noreferrer" title="Discord">
+        <FaDiscord className="hover:text-indigo-400 transition" />
         </a>
        </div>
 
