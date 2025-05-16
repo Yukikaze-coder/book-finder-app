@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [refreshFavorites, setRefreshFavorites] = useState(false);
   const [tab, setTab] = useState("search");
+  const [showRain, setShowRain] = useState(true);
 
   // Load saved state on first load
   const [query, setQuery] = useState(() => localStorage.getItem("searchQuery") || "");
@@ -27,7 +28,7 @@ function App() {
     return onAuthStateChanged(auth, setUser);
   }, []);
 
-  // Watch for changes and save to localStorage
+  // localStorage
   useEffect(() => {
     localStorage.setItem("searchQuery", query);
   }, [query]);
@@ -45,15 +46,21 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen">
-        <BookRainBackground />
+        {showRain && <BookRainBackground />}
         <div className="relative z-10 p-6 bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-2xl font-bold text-center flex-1">📚 Book Finder</h1>
+            <button
+              onClick={() => setShowRain((prev) => !prev)}
+              className="ml-4 px-4 py-2 rounded bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-white shadow"
+            >
+              {showRain ? "Turn Off Book Rain" : "Turn On Book Rain"}
+            </button>
           </div>
 
           <div className="flex justify-center mb-6">
             {user ? (
-              <div className="flex items-center" style={{ gap: "4rem" }}>
+              <div className="flex items-center" style={{ gap: "8rem" }}>
                 <img
                   src={user.photoURL || "/default-avatar.jpg"}
                   alt="avatar"
@@ -78,7 +85,7 @@ function App() {
               element={
                 user ? (
                   <>
-                    {/* Tab buttons */}
+                    
                     <div className="flex justify-center mb-6 gap-4">
                       <button
                         onClick={() => setTab("search")}
@@ -102,7 +109,7 @@ function App() {
                       </button>
                     </div>
 
-                    {/* Fade tab content in/out */}
+                  
                     <div className="animate-fade-in">
                       {tab === "search" && (
                         <Search
@@ -120,7 +127,16 @@ function App() {
                     </div>
                   </>
                 ) : (
-                  <p className="text-center">Please log in to use the app.</p>
+                  <div className="text-center">
+                    <p className="mb-4">Please log in to use the app.</p>
+                    <p className="mb-4">アプリを使用するにはログインしてください。</p>
+                    <img
+                      src="/banner.webp"
+                      alt="Book Finder Banner"
+                      className="mx-auto mb-8 rounded shadow-lg max-w-full h-auto"
+                    />
+                    
+                  </div>
                 )
               }
             />
@@ -129,7 +145,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <Footer outer /> {/* Footer outside main layout, but inside Router */}
+        <Footer outer /> 
       </div>
     </Router>
   );

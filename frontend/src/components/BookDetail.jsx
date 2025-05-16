@@ -39,7 +39,6 @@ export default function BookDetail() {
     fetchBook();
   }, [id]);
 
-  
   const saveFavorite = async () => {
     const user = auth.currentUser;
 
@@ -107,17 +106,18 @@ export default function BookDetail() {
             {info.authors?.join(', ') || 'Unknown Author'}
           </p>
           {/* Enhanced Description Block */}
-          <div className="mt-4 p-5 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-inner border dark:border-gray-700">
+          <div className="mt-4 p-5 px-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-inner border dark:border-gray-700">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
               📖 Description
             </h3>
-            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-              {info.description ? (
-                info.description
-              ) : (
-                <span className="text-gray-500">No description available for this book.</span>
-              )}
-            </p>
+            {info.description ? (
+              <div
+                className="text-base text-gray-700 dark:text-gray-300 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: info.description }}
+              />
+            ) : (
+              <span className="text-gray-500">No description available for this book.</span>
+            )}
           </div>
           {/* End Enhanced Description Block */}
           {info.categories && (
