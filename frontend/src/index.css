@@ -97,7 +97,7 @@ button:focus-visible {
 input[type="email"],
 input[type="password"] {
   border: 2px solid #646cff;   
-  border-radius: 8px;          
+  border-radius: 25px;          
   padding: 0.5em 1em;        
   outline: none;               
   transition: border-color 0.2s;
