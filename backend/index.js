@@ -10,21 +10,10 @@ const allowedOrigins = [
   "https://book-finder-app-1.onrender.com",       
 ];
 
-
 app.use(cors({
   origin: allowedOrigins,
   credentials: true
 }));
-
-//app.options("*", cors({
-//  origin: allowedOrigins,
-//  credentials: true
-//}));
-
-//app.use(cors({
-//  origin: ["http://localhost:5173", "https://book-finder-app-1.onrender.com"],
-//  credentials: true
-//}));
 
 app.use(express.json());
 
