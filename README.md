@@ -119,7 +119,7 @@ book-finder-app/
 
 
 
-🚀 Future Enhancements
+#### 🚀 Future Enhancements
 
 
 🌙 Add a Dark mode toggle
