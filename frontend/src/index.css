@@ -93,3 +93,20 @@ button:focus-visible {
 .animate-fade-out {
   animation: fadeOut 0.4s forwards;
 }
+
+input[type="email"],
+input[type="password"] {
+  border: 2px solid #646cff;   
+  border-radius: 8px;          
+  padding: 0.5em 1em;        
+  outline: none;               
+  transition: border-color 0.2s;
+  font-size: 1em;
+  width: 400px;   
+  height: 30px;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #535bf2;       /* Border color on focus */
+}

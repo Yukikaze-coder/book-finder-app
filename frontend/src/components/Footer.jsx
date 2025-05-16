@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="text-center md:text-left">
           <h2 className="text-2xl font-extrabold tracking-wide flex items-center gap-2">
-            <span className="animate-bounce">📚</span> Book Finder Code Chrysalis 2025
+            <span className="animate-bounce">📚</span> Book Finder 2025. All rights reserved
           </h2>
           <p className="text-sm text-gray-300 mt-1">Discover and save your favorite books.</p>
         </div>

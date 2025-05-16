@@ -48,8 +48,8 @@ function App() {
       <div className="relative min-h-screen">
         {showRain && <BookRainBackground />}
         <div className="relative z-10 p-6 bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen">
-          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-bold text-center flex-1">📚 Book Finder</h1>
+          <div className="flex justify-center items-center mb-6">
+            <h1 className="text-2xl font-bold text-center flex-1 ml-8">📚 Book Finder ©</h1>
             <button
               onClick={() => setShowRain((prev) => !prev)}
               className="ml-4 px-4 py-2 rounded bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-white shadow"
