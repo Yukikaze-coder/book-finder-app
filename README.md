@@ -70,7 +70,7 @@ npm install
 cp .env.example .env
 npm run dev
 
-
+---
 
 ⚙️ Environment Variables
 
@@ -100,7 +100,7 @@ DATABASE_NAME=book_finder
 # RENDER
 DATABASE_URL=postgres://...
 
-
+---
 
 📁 Project Structure
 
@@ -117,7 +117,7 @@ book-finder-app/
 │   │   └── App.jsx
 │   └── tailwind.config.js
 
-
+---
 
 ## 🚀 Future Enhancements
 
