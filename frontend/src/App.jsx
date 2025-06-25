@@ -9,13 +9,11 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import About from './components/About';
 import Contact from './components/Contact';
-import BookRainBackground from './components/BookRainBackground';
 
 function App() {
   const [user, setUser] = useState(null);
   const [refreshFavorites, setRefreshFavorites] = useState(false);
   const [tab, setTab] = useState("search");
-  const [showRain, setShowRain] = useState(true);
 
   // Load saved state on first load
   const [query, setQuery] = useState(() => localStorage.getItem("searchQuery") || "");
@@ -46,16 +44,10 @@ function App() {
   return (
     <Router>
       <div className="relative min-h-screen">
-        {showRain && <BookRainBackground />}
         <div className="relative z-10 p-6 bg-white text-black dark:bg-gray-900 dark:text-white min-h-screen">
           <div className="flex justify-center items-center mb-6">
             <h1 className="text-2xl font-bold text-center flex-1 ml-8">📚 Book Finder ©</h1>
-            <button
-              onClick={() => setShowRain((prev) => !prev)}
-              className="ml-4 px-4 py-2 rounded bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-white shadow"
-            >
-              {showRain ? "Turn Off Book Rain" : "Turn On Book Rain"}
-            </button>
+
           </div>
 
           <div className="flex justify-center mb-6">
